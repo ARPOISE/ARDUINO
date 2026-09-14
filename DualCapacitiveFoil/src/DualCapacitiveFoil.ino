@@ -37,7 +37,7 @@ Peter Graf, see www.mission-base.com/peter/
 			         +---[ Resistor 1 ]----+----o Receive Pin 1
 			         |                     |
 			         |                 [ Foil A ]
-Send Pin  o----+
+Send Pin  o----------+
 			         |
 			         |
 			         +---[ Resistor 2 ]----+----o Receive Pin 2
