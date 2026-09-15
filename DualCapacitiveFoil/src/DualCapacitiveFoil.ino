@@ -68,11 +68,11 @@ void setup()
 long sensorActivationThreshold = 1000; // This might need calibration
 
 unsigned long nextSerialPrint = 0;
-int serialPrintInterval = 1000; // In milli seconds
+int serialPrintInterval = 1000; // In milliseconds
 
 int ledIntensity = 0;
 unsigned long nextIntensityCheck = 0;
-int intensityCheckInterval = 20; // In milli seconds
+int intensityCheckInterval = 20; // In milliseconds
 
 void loop()
 {
@@ -82,18 +82,18 @@ void loop()
 	long sensorValue1 = sensor1.capacitiveSensor(10);
 	long sensorValue2 = sensor2.capacitiveSensor(10);
 
-	unsigned long milliSeconds = millis();
+	unsigned long now = millis();
 	if (sensorValue1 > sensorActivationThreshold && sensorValue2 > sensorActivationThreshold)
 	{
 		ledIntensity = 255;
-		nextIntensityCheck = milliSeconds + intensityCheckInterval;
+		nextIntensityCheck = now + intensityCheckInterval;
 	}
-	else if (milliSeconds > nextIntensityCheck)
+	else if (now >= nextIntensityCheck)
 	{
 		if (ledIntensity > 0)
 		{
 			ledIntensity--;
-			nextIntensityCheck = milliSeconds + intensityCheckInterval;
+			nextIntensityCheck = now + intensityCheckInterval;
 		}
 		else
 		{
@@ -102,20 +102,20 @@ void loop()
 	}
 	analogWrite(LED, ledIntensity);
 
-	milliSeconds = millis();
-	if (milliSeconds > nextSerialPrint)
+	now = millis();
+	if (now >= nextSerialPrint)
 	{
-		nextSerialPrint = milliSeconds + serialPrintInterval;
+		nextSerialPrint = now + serialPrintInterval;
 
 		Serial.print("3\t");                    // Pin number
-		Serial.print(milliSeconds - start);     // Time performance
+		Serial.print(now - start);              // Time performance
 		Serial.print("\t");                     // Tab
 		Serial.print(sensorValue1);             // Sensor value
 		Serial.print("\t");                     // Tab
 		Serial.println(ledIntensity);           // Led intensity
 
 		Serial.print("4\t");                    // Pin number
-		Serial.print(milliSeconds - start);     // Time performance
+		Serial.print(now - start);              // Time performance
 		Serial.print("\t");                     // Tab
 		Serial.print(sensorValue2);             // Sensor value
 		Serial.print("\t");                     // Tab
