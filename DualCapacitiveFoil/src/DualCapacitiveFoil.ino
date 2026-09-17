@@ -107,14 +107,14 @@ void loop()
 	{
 		nextSerialPrint = now + serialPrintInterval;
 
-		Serial.print("3\t");                    // Pin number
+		Serial.print("5\t");                    // Pin number
 		Serial.print(now - start);              // Time performance
 		Serial.print("\t");                     // Tab
 		Serial.print(sensorValue1);             // Sensor value
 		Serial.print("\t");                     // Tab
 		Serial.println(ledIntensity);           // Led intensity
 
-		Serial.print("4\t");                    // Pin number
+		Serial.print("9\t");                    // Pin number
 		Serial.print(now - start);              // Time performance
 		Serial.print("\t");                     // Tab
 		Serial.print(sensorValue2);             // Sensor value
