@@ -8,7 +8,7 @@ This is a picture of the setup:
 
 ![Picture](/DualCapacitiveFoil/images/IMG_8925.JPG)
 
-Parts:
+### Parts:
 
 - ARDUINO UNO R3 and breadboard
 - Two 10 MegaOhm resistors
@@ -17,10 +17,10 @@ Parts:
 - One 220 Ohm resistor
 - Cables
 
-Software:
+### Software:
 - CapacitiveSensor Library, https://github.com/PaulStoffregen/CapacitiveSensor
 
-Wiring:
+### Wiring:
 ```text
 /*
   Wiring Diagram (1 Send Pin, 2 Receive Pins), Resistors are 10 MegaOhm!
