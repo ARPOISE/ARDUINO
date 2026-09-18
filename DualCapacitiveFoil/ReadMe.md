@@ -8,7 +8,7 @@ This is a picture of the setup:
 
 ![Picture](/DualCapacitiveFoil/images/IMG_8925.JPG)
 
-Parts used:
+Parts:
 
 - ARDUINO UNO R3 and breadboard
 - Two 10 MegaOhm resistors
@@ -17,5 +17,27 @@ Parts used:
 - One 220 Ohm resistor
 - Cables
 
-Software used:
+Software:
 - CapacitiveSensor Library, https://github.com/PaulStoffregen/CapacitiveSensor
+
+Wiring:
+```text
+/*
+  Wiring Diagram (1 Send Pin, 2 Receive Pins), Resistors are 10 MegaOhm!
+
+			         +---[ Resistor 1 ]----+----o Receive Pin 1
+			         |                     |
+			         |                 [ Foil A ]
+Send Pin  o----------+
+			         |
+			         |
+			         +---[ Resistor 2 ]----+----o Receive Pin 2
+			                               |
+			                           [ Foil B ]
+  Sensor-Setup:
+  Pin 7 - Send Pin
+  Pin 5 - Receive Pin 1 for foil A
+  Pin 9 - Receive Pin 2 for foil B
+  Pin 11 - LED, just for debugging
+ */
+```
