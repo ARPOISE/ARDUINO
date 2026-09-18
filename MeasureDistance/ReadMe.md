@@ -18,4 +18,4 @@ This is a picture of the setup:
 - HCSR04 ultrasonic sensor library v2.0.2 by gamegine, https://github.com/gamegine/HCSR04-ultrasonic-sensor-lib/releases
 
 ### Wiring:
-- The HC-SR04 ultrasonic sensor has four pins, 5V, Ground, trigger and echo. This sketch uses 1 output pin for both sensors and two different echo pins for the sensors.
+- The HC-SR04 ultrasonic sensor has four pins, they are 5V, Ground, trigger and echo. This sketch uses 1 output pin for both sensors and two different echo pins for the sensors.
