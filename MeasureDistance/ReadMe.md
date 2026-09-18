@@ -8,7 +8,7 @@ This is a picture of the setup:
 
 Parts used:
 
-- ARDUINO UNO R4 and breadboard, the one on the right
+- ARDUINO UNO R4 and breadboard, the one on the right in the picture
 - Two HC-SR04 ultrasonic sensors
-- Second breadboard, the one on the left in the picture, the second ARDUINO is not used, just the breadboard for holding the sensor
+- Second breadboard, the one on the left, the second ARDUINO is not used, just the breadboard for holding the sensor
 - Cables, the crocodile cables are my only cables long enough to separate the two sensors by 0.5m
