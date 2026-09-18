@@ -16,3 +16,6 @@ Parts used:
 - One red LED
 - One 220 Ohm resistor
 - Cables
+
+Software used:
+- CapacitiveSensor Library, https://github.com/PaulStoffregen/CapacitiveSensor
