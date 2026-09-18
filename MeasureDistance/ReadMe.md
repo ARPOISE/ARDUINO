@@ -12,3 +12,7 @@ Parts used:
 - Two HC-SR04 ultrasonic sensors
 - Second breadboard, the one on the left, the second ARDUINO is not used, just the breadboard for holding the sensor
 - Cables, the crocodile cables are my only cables long enough to separate the two sensors by 0.5m
+
+Software used:
+
+- HCSR04 ultrasonic sensor library v2.0.2 by gamegine, https://github.com/gamegine/HCSR04-ultrasonic-sensor-lib/releases
