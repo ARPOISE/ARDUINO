@@ -1,4 +1,5 @@
 # ARpoise - ARDUINO
+ARDUINO components created in order to enhance the user experience of ARpoise.
 ### DualCapacitiveFoil
 A sketch reading the inputs from two capacity foils. [DualCapacitiveFoil](https://github.com/ARPOISE/ARDUINO/tree/main/DualCapacitiveFoil).
 ### MeasureDistance
