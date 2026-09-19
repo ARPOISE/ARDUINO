@@ -20,6 +20,6 @@ This is a picture of the setup:
 - HC-SR04 ultrasonic sensor library, v2.0.2, by gamegine, https://github.com/gamegine/HCSR04-ultrasonic-sensor-lib/releases
 - The servo library, https://docs.arduino.cc/libraries/servo/
 
-### Wiring:
+### Wiring:  
 - The HC-SR04 ultrasonic sensor has four pins, they are 5V, Ground, trigger, and echo. This sketch uses 1 output pin for both sensors and two different echo pins for the sensors.
-- The servo motor has three pins, 5V, Ground, and control. On the breadboard, 5V are Ground decoupled via a 100uF capacitor.
+- The servo motor has three pins, 5V, Ground, and control. On the breadboard, 5V and Ground are decoupled via a 100uF capacitor.
