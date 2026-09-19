@@ -22,4 +22,4 @@ This is a picture of the setup:
 
 ### Wiring:  
 - The HC-SR04 ultrasonic sensor has four pins, they are 5V, Ground, trigger, and echo. This sketch uses 1 output pin for both sensors and two different echo pins for the sensors.
-- The servo motor has three pins, 5V, Ground, and control. On the breadboard, 5V and Ground are decoupled via a 100uF capacitor.
+- The servo motor has three pins, they are 5V, Ground, and control. On the breadboard 5V and Ground are decoupled via a 100uF capacitor.
