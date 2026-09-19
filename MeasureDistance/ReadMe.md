@@ -4,7 +4,7 @@ An ARDUINO sketch using two HC-SR04 ultrasonic sensors, it uses a low pass filte
 
 This is a picture of the setup:
 
-![Picture](/MeasureDistance/IMG_8927.JPG)
+![Picture](/MeasureDistance/IMG_8932.JPG)
 
 ### Parts:
 
