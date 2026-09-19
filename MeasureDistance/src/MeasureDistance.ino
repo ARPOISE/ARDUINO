@@ -1,8 +1,9 @@
 /*
  MeasureDistance.ino - ARDUINO sketch using two HC-SR04 ultrasonic sensors,
-                       uses a low pass filter for the sensor readings,
-                       triangulates the object position relative to the right sensor,
-                       calculates the angle towards the object relative to the midpoint between the sensors.
+      uses a low pass filter for the sensor readings,
+      triangulates the object position relative to the right sensor,
+      calculates the angle towards the object relative to the midpoint between the sensors,
+      uses a servo motor to point in the direction of the object sensed.
 
 MIT License
 
@@ -33,20 +34,30 @@ Peter Graf, see https://www.mission-base.com/peter/
 
 */
 
+#include "Servo.h"
+
+Servo servoMotor;
+
 // Uses the HCSR04 ultrasonic sensor library v2.0.2 by gamegine
 // https://github.com/gamegine/HCSR04-ultrasonic-sensor-lib/releases
+//
 #include <HCSR04.h>
 
 // Uses one trigger pin, connected to both sensors
 // And two echo pins, one for each sensor
+// Initialisation of class HCSR04 (2 => trigger pin, 3, 4 => echo pins)
 //
-HCSR04 hc(2, new int[2]{ 3, 4 }, 2);  //initialisation class HCSR04 (trigger pin, echo pin)
+HCSR04 hc(2, new int[2]{ 3, 4 }, 2);
 
 unsigned long nextSerialPrint = 0;
 int serialPrintInterval = 500;  // In milliseconds
 
 void setup() {
   Serial.begin(74880);
+
+  servoMotor.attach(9);  // pin for servo control
+
+  servoMotor.write(90);
 }
 
 // Filter the sensor readings
@@ -144,14 +155,26 @@ void loop() {
 
     if (calculateWorked) {
       // Math succeeded! Print the coordinates
+
+      int servoAngle = 180 - (((int)objectAngle) + 90);
+      if (servoAngle < 0) {
+        servoAngle = 0;
+      } else if (servoAngle > 179) {
+        servoAngle = 179;
+      }
+      servoMotor.write(servoAngle);
+
       Serial.print("Object Position -> X: ");
       Serial.print(objectX);
       Serial.print(" cm, Y: ");
       Serial.print(objectY);
       Serial.print(" cm | Angle: ");
       Serial.print(objectAngle);
+      Serial.print("° | ServoAngle: ");
+      Serial.print(servoAngle);
       Serial.println("°");
     } else {
+      servoMotor.write(90);
       Serial.println("Error: Geometric conflict (Target out of bounds)");
     }
   }
