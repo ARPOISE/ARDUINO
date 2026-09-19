@@ -18,7 +18,7 @@ This is a picture of the setup:
 - Cables
 
 ### Software:
-- CapacitiveSensor Library, https://github.com/PaulStoffregen/CapacitiveSensor
+- CapacitiveSensor Library, v0.5.1, https://github.com/PaulStoffregen/CapacitiveSensor
 
 ### Wiring:
 ```text
