@@ -1,8 +1,8 @@
 # ARpoise - ARDUINO
-ARDUINO sketches created in order to enhance the user experience of ARpoise.
+ARDUINO sketches for enhancing the user experience of ARpoise.
 ### DualCapacitiveFoil
-A sketch reading the inputs from two capacity foils. [DualCapacitiveFoil](https://github.com/ARPOISE/ARDUINO/tree/main/DualCapacitiveFoil).
+Reading the inputs from two capacity foils. [DualCapacitiveFoil](https://github.com/ARPOISE/ARDUINO/tree/main/DualCapacitiveFoil).
 ### MeasureDistance
-A sketch reading the inputs from two HC-SR04 ultrasonic sensors.  [MeasureDistance](https://github.com/ARPOISE/ARDUINO/tree/main/MeasureDistance).
+Reading the inputs from two HC-SR04 ultrasonic sensors.  [MeasureDistance](https://github.com/ARPOISE/ARDUINO/tree/main/MeasureDistance).
 
 
