@@ -2,7 +2,7 @@
 
 An ARDUINO sketch to read the inputs from two capacity foils. 
 
-The red LED is turned on if both foils are triggered at the same time.
+The LED is turned on if both foils are triggered at the same time.
 
 This is a picture of the setup:
 
