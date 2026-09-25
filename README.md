@@ -5,4 +5,4 @@ Reading the inputs from two capacity foils. [DualCapacitiveFoil](https://github.
 ### MeasureDistance
 Reading the inputs from two HC-SR04 ultrasonic sensors.  [MeasureDistance](https://github.com/ARPOISE/ARDUINO/tree/main/MeasureDistance).
 ### DualPirSensor
-Reading the inputs from two HW-416 Passive Infrared sensors.  [MeasureDistance](https://github.com/ARPOISE/ARDUINO/tree/main/DualPirSensor).
+Reading the inputs from two HW-416 Passive Infrared sensors.  [DualPirSensor](https://github.com/ARPOISE/ARDUINO/tree/main/DualPirSensor).
