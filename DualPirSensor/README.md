@@ -25,7 +25,7 @@ This is a picture of the setup:
   Pin 2 - Receive Pin for sensor 1
   Pin 3 - Receive Pin for sensor 2
   Pin 13 - LED, just for debugging
-
+```
 ### Hints
 
 There are two small orange adjustment screws (potentiometers) on the board.
@@ -37,5 +37,5 @@ allowing it to drop back to 0 quickly.
 The other potentiometer, labeled SENS (Sensitivity), controls the detection distance.
 If it is set to the maximum, the sensor can trigger on invisible air currents, heat from the Arduino itself,
 or motion through thin walls.
-Your can change this by turning the SENS potentiometer counter-clockwise to the minimum.
+Your can change this by turning the SENS potentiometer counter-clockwise towards the minimum.
 
