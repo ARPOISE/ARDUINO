@@ -2,7 +2,7 @@
 
 An ARDUINO sketch to read the inputs from two HW-416A passive infrared sensors. 
 
-The green LED is turned on if both sensors are HIGH at the same time.
+The LED is turned on if both sensors are HIGH at the same time.
 
 This is a picture of the setup:
 
@@ -12,7 +12,7 @@ This is a picture of the setup:
 
 - ARDUINO UNO R4 and breadboard
 - Two HW-416A passive infrared sensors
-- One green LED
+- One LED, any color
 - One 220 Ohm resistor
 - Cables
 
