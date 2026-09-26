@@ -13,7 +13,7 @@ This is a picture of the setup:
 - ARDUINO UNO R3 and breadboard
 - Two 10 MegaOhm resistors
 - Two pieces of folded household aluminum foil
-- One red, any color
+- One LED, any color
 - One 220 Ohm resistor
 - Cables
 
