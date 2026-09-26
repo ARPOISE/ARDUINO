@@ -26,6 +26,7 @@ This is a picture of the setup:
   Pin 3 - Receive Pin for sensor 2
   Pin 13 - LED, just for debugging
 ```
+- The HW-416A passive infrared sensor has three pins, they are Ground (black in the picture), output (white), and 5V (red).
 ### Hints
 
 There are two small orange adjustment screws (potentiometers) on the board.
