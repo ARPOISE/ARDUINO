@@ -27,7 +27,7 @@ This is a picture of the setup:
   Pin 13 - LED, just for debugging
 ```
 - The HW-416A passive infrared sensor has three pins, they are Ground (black in the picture), output (white), and 5V (red).
-### Hints
+### Hints:
 
 There are two small orange adjustment screws (potentiometers) on the board.
 The one labeled TIME (the one on the left side in the picture) controls how long the output stays HIGH after detecting motion.
