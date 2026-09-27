@@ -29,7 +29,7 @@ This is a picture of the setup:
 - The HW-416A passive infrared sensor has three pins, they are Ground (black in the picture), output (white), and 5V (red).
 ### Hints:
 
-There are two small orange adjustment screws (potentiometers) on the board.
+There are two small orange adjustment screws (potentiometers) on the sensor board.
 The one labeled TIME (the one on the left side in the picture) controls how long the output stays HIGH after detecting motion.
 If it is turned all the way clockwise, the signal will stay 1 for up to 5 to 7 minutes from a single movement.
 Turning the TIME potentiometer all the way counter-clockwise reduces the hold time to its minimum (about 3 seconds),
