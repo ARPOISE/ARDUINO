@@ -9,7 +9,8 @@ This is a picture of the setup:
 The two HY-SRF05 ultrasonic sensors are located on top of the monitor, left and right of the middle of the monitor, they are called TL (top left) and TR (top right) in the code.
 The two HY-SR04 ultrasonic sensors are located below the monitor, left and right of the middle of the monitor, they are called BL (bottom left) and BR (bottom right) in the code.
 
-The position of the nearest object calculated from the sensor outputs is sent via the serial interface to a Unity 3d project running on a PC. This project shows a very simple head with eyes, the head and eyes are animated so that they look at the nearest object. This is what it looks like:
+The position of the nearest object calculated from the sensor outputs is sent via the serial interface to a Unity 3d project running on a PC. This project shows a very simple head with eyes, the head and eyes are animated so that they look at the nearest object.
+This is what it looks like when running:
 
 https://github.com/user-attachments/assets/d95815f4-1e74-4599-b4b7-c438d0c05fbc
 
