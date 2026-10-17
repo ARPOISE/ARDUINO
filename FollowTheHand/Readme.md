@@ -18,7 +18,7 @@ https://github.com/user-attachments/assets/d95815f4-1e74-4599-b4b7-c438d0c05fbc
 
 - ARDUINO UNO R4, and breadboard
 - Two HC-SR04 ultrasonic sensors, the ones below the monitor
-- Two HY-SRF05 ultrasonic sensors, the ones on to of the monitor
+- Two HY-SRF05 ultrasonic sensors, the ones on top of the monitor
 - Second breadboard for holding the sensor on the left
 - Cables
 
@@ -883,5 +883,9 @@ void loop()
     delay(MEASUREMENT_INTERVAL_MS);
 }
 ```
+
+### Unity Project:
+The head is very simple geometry with four children, the eyes, lips and hair.
+![Picture](/FollowTheHand/UnityHead.png)
 
 
