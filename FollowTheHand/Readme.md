@@ -36,7 +36,7 @@ The sketch uses digital pin D8 in order to trigger all 4 ultrasound sensors simu
 
 Wiring of the HY-SRF05 sensors:
 ![Picture](/FollowTheHand/HY-SRF06-Wiring.JPG)
-From left to right, ground, echo, trigger, 5V.
+From left to right, ground, (unused), echo, trigger, 5V.
 
 Wiring of the HY-SR04 sensors:
 ![Picture](/FollowTheHand/HC-SR04-Wiring.JPG)
