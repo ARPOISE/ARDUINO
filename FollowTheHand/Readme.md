@@ -62,9 +62,11 @@ https://github.com/user-attachments/assets/d95815f4-1e74-4599-b4b7-c438d0c05fbc
 - Standard ARDUINO software.
 
 ### Wiring:
-The sketch uses digital pin D8 in order to trigger all 4 ultrasound sensor simultaneously. The digital pins D3, D4, D5, and D6 are used for receiving the echos of the four sensors.
+The sketch uses digital pin D8 in order to trigger all 4 ultrasound sensors. The digital pins D3, D4, D5, and D6 are used for receiving the echos of the four sensors.
 ![Picture](/FollowTheHand/ArduinoWiring.JPG)
-From left to right, ground, echo, trigger, 5V.
+
+The sketch uses digital pin D8 in order to trigger all 4 ultrasound sensors simultaneously. 
+![Picture](/FollowTheHand/TriggerPinWiring.JPG)
 
 Wiring of the HY-SRF05 sensors:
 ![Picture](/FollowTheHand/HY-SRF06-Wiring.JPG)
