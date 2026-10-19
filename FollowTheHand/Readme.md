@@ -23,9 +23,10 @@ https://github.com/user-attachments/assets/d95815f4-1e74-4599-b4b7-c438d0c05fbc
 - Second breadboard for holding the sensor on the left
 - Cables
 
-### Software
+### Software:
 
 - Standard ARDUINO software.
+- Unity 3D on the PC.
 
 ### Wiring:
 The sketch uses digital pin D8 in order to trigger all 4 ultrasound sensors. The digital pins D3, D4, D5, and D6 are used for receiving the echos of the four sensors.
