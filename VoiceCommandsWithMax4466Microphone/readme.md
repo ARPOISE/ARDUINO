@@ -18,3 +18,9 @@ When the sketch is not in training mode and one of the command words is recogniz
 - Five 220 Ohm resistors
 - Five LEDs I used the colors red, yellow, green, blue, and white
 - Cables
+
+### Wiring:
+The Microphone is connected to 3.3V, Ground, and the analog pin A0.
+The digital pins D2 to D6 are connected to one resistor each.
+Each resistor is connected to an LED. D2 - red, D3 - yellow, D4 - green, D5 - blue, D6 - white.
+The LEDs are connected to Ground.
