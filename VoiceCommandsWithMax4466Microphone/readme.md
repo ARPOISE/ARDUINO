@@ -66,28 +66,31 @@ Peter Graf, see www.mission-base.com/peter/
 #include <EEPROM.h>
 
 // ========================================================
-// MAX4466 SIX COMMANDS - TIME-VARYING SPECTRAL TRAINER
-// Arduino UNO R4 WiFi, microphone OUT -> A0, VCC -> 3.3V
-// Serial Monitor 115200 baud, Newline. Send 'r' to arm.
-// Five examples each: RED, YELLOW, GREEN, BLUE, WHITE, OFF.
-// Saves 32-bit float templates to EEPROM; send t to retrain.
-// LEDs: RED D2, YELLOW D3, GREEN D4, BLUE D5, WHITE D6.
-// One LED at a time; OFF clears all. UNKNOWN leaves LEDs unchanged.
-// Word duration is diagnostic only, NOT used for classification.
+// VOICE-CONTROLLED COLOR LEDS
+// Arduino Uno R4 WiFi + MAX4466 microphone
+//
+// Microphone: OUT=A0, VCC=3.3V, GND=GND
+// LEDs (each with a 220-ohm resistor):
+//   RED=D2, YELLOW=D3, GREEN=D4, BLUE=D5, WHITE=D6
+//
+// Commands: RED, YELLOW, GREEN, BLUE, WHITE, OFF
+// Exactly one LED is on at a time; OFF turns all off.
+// UNKNOWN does not change the LEDs.
+//
+// Serial Monitor: 115200 baud, Newline
+//   r = arm the next training example
+//   t = retrain all six commands
+// Five examples per command. Completed training is stored as
+// averaged 32-bit spectral templates in EEPROM-compatible storage.
+// Valid saved templates load automatically on restart.
 // ========================================================
 
+// --------------------------------------------------------
+// Hardware and audio configuration
+// --------------------------------------------------------
 const byte MIC_PIN = A0;
 const byte LED_COUNT = 5;
 const byte LED_PINS[LED_COUNT] = {2, 3, 4, 5, 6};
-
-void setLedForCommand(byte command)
-{
-    for (byte i = 0; i < LED_COUNT; i++)
-    {
-        digitalWrite(LED_PINS[i], (command == i) ? HIGH : LOW);
-    }
-}
-
 const byte WORD_COUNT = 6;
 const byte TRAINING_EXAMPLES = 5;
 const byte BAND_COUNT = 8;
@@ -100,9 +103,27 @@ const unsigned long READY_QUIET_MS = 250;
 const unsigned long MAX_EVENT_MS = 1400;
 const byte MAX_FRAMES = 88; // 88 x 16 ms = 1408 ms
 const byte MIN_FRAMES = 7;
+// Goertzel analysis frequencies in Hz.
 const float FREQUENCIES[BAND_COUNT] = {250, 400, 600, 850, 1150, 1550, 2100, 2850};
 const char *WORD_NAMES[WORD_COUNT] = {"RED", "YELLOW", "GREEN", "BLUE", "WHITE", "OFF"};
 
+// --------------------------------------------------------
+// LED output
+// --------------------------------------------------------
+void setLedForCommand(byte command)
+{
+    for (byte i = 0; i < LED_COUNT; i++)
+    {
+        digitalWrite(LED_PINS[i], (command == i) ? HIGH : LOW);
+    }
+}
+
+// --------------------------------------------------------
+// Recognition and training state
+// --------------------------------------------------------
+// Each template is the average of five examples. Each word
+// is represented by eight time regions x eight frequency bands.
+// Word duration is reported but not used for classification.
 float templates[WORD_COUNT][TIME_BINS][BAND_COUNT] = {};
 float eventBands[MAX_FRAMES][BAND_COUNT];
 float eventSignature[TIME_BINS][BAND_COUNT];
@@ -122,8 +143,17 @@ bool armed = false;
 bool waitingForQuiet = false;
 bool trained = false;
 
-// Persistent storage: six averaged 8x8 float templates (1536 bytes).
-// A magic number, format version and checksum validate saved data.
+// --------------------------------------------------------
+// Persistent training storage
+// --------------------------------------------------------
+// EEPROM layout is deliberately unchanged for compatibility
+// with previously saved training:
+//   bytes 0-3: magic number
+//   byte 4: format version
+//   byte 5: number of commands
+//   bytes 6-7: checksum
+//   bytes 8 onward: raw 32-bit float templates (1536 bytes)
+// The checksum detects corruption; it is not a security check.
 const uint32_t EEPROM_MAGIC = 0x3643564DUL;
 const byte EEPROM_VERSION = 1;
 const int EEPROM_HEADER_SIZE = 8;
@@ -182,7 +212,8 @@ void saveTemplates()
         Serial.println(F("ERROR: EEPROM capacity insufficient; not saved."));
         return;
     }
-    // Invalidate header while writing, commit magic only after all data.
+    // Invalidate the header first. Commit the magic number last
+    // so interrupted writes are not accepted as complete.
     EEPROM.update(0, 0);
     const byte *source = (const byte *)templates;
     uint16_t checksum = 0;
@@ -203,6 +234,7 @@ void saveTemplates()
     Serial.println(F("TRAINING SAVED: 32-bit float templates."));
 }
 
+// Forward declaration: used when retraining is requested.
 void printTrainingPrompt();
 
 void resetTraining()
@@ -223,6 +255,9 @@ void resetTraining()
 
 unsigned long lastReadyPrintMs = 0;
 
+// --------------------------------------------------------
+// Audio capture and spectral features
+// --------------------------------------------------------
 void prepareGoertzel()
 {
     for (byte b = 0; b < BAND_COUNT; b++)
@@ -296,8 +331,8 @@ void calculateBands(float *out)
 
 void makeSignature()
 {
-    // Divide the recorded word into eight equal time regions.
-    // Each region retains its own normalized frequency distribution.
+    // Resample the recorded frames into eight equal time regions.
+    // Retain the normalized spectrum for each region.
     for (byte t = 0; t < TIME_BINS; t++)
     {
         for (byte b = 0; b < BAND_COUNT; b++)
@@ -342,6 +377,9 @@ float distanceToWord(byte word)
     return sum / TIME_BINS; // Typical scale 0 to 2.
 }
 
+// --------------------------------------------------------
+// Training and recognition
+// --------------------------------------------------------
 void printTrainingPrompt()
 {
     if (trainingWord >= WORD_COUNT)
@@ -417,7 +455,8 @@ void processEvent()
                 secondWord = w;
             }
         }
-        // Same acceptance thresholds as the proven two-word version.
+        // Accept only a sufficiently close and unambiguous match.
+        // Keep these tested thresholds unchanged.
         const char *result = "UNKNOWN";
         if (distances[bestWord] < 0.65f &&
             distances[secondWord] - distances[bestWord] > 0.06f)
@@ -442,6 +481,9 @@ void processEvent()
     }
 }
 
+// --------------------------------------------------------
+// Startup noise calibration
+// --------------------------------------------------------
 void calibrate()
 {
     Serial.println(F("CALIBRATING: stay silent for 3 seconds."));
@@ -483,13 +525,16 @@ void calibrate()
     Serial.println(stopThreshold);
 }
 
+// --------------------------------------------------------
+// Arduino setup and main loop
+// --------------------------------------------------------
 void setup()
 {
     for (byte i = 0; i < LED_COUNT; i++)
     {
         pinMode(LED_PINS[i], OUTPUT);
     }
-    setLedForCommand(WORD_COUNT - 1); // OFF at startup.
+    setLedForCommand(WORD_COUNT - 1); // All LEDs off at startup.
     Serial.begin(115200);
     analogReadResolution(12);
     delay(800);
