@@ -14,6 +14,9 @@ This is a picture of the setup:
 
 ![Picture](./IMG_9415.JPG)
 
+### Software:
+Standard ARDUINO software.
+
 ### Parts:
 
 - ARDUINO UNO R4 WIFI and breadboard
