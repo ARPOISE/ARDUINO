@@ -15,7 +15,7 @@ This is a picture of the setup:
 ![Picture](./IMG_9415.JPG)
 
 ### Software:
-Standard ARDUINO software.
+- Standard ARDUINO software.
 
 ### Parts:
 
