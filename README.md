@@ -10,3 +10,6 @@ Reading the inputs from two HC-SR04 ultrasonic sensors.  [MeasureDistance](https
 Reading the inputs from two HW-416 passive infrared sensors.  [DualPirSensor](https://github.com/ARPOISE/ARDUINO/tree/main/DualPirSensor).
 ### PiezoPitchDelay
 Using two potentiometers driving pitch and delay of a piezo.  [PiezoPitchDelay](https://github.com/ARPOISE/ARDUINO/tree/main/PiezoPitchDelay).
+### VoiceCommandsWithMax4466Microphone
+Processing six simple voice commands switching LEDs on or off.  [VoiceCommandsWithMax4466Microphone](https://github.com/ARPOISE/ARDUINO/tree/main/VoiceCommandsWithMax4466Microphone).
+
