@@ -1,6 +1,6 @@
 ##     VoiceCommandsWithMax4466Microphone
 
-An ARDUINO sketch for 6 simple voice commands switching on LEDs.
+An ARDUINO sketch for processing six simple voice commands switching LEDs on and off.
 
 This is a picture of the setup:
 
