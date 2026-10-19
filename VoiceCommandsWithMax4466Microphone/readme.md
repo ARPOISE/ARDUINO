@@ -22,7 +22,7 @@ This is a picture of the setup:
 - ARDUINO UNO R4 WIFI and breadboard
 - One Microphone Amplifier - MAX4466, https://www.adafruit.com/product/1063
 - Five 220 Ohm resistors
-- Five LEDs I used the colors red, yellow, green, blue, and white
+- Five LEDs, I used the colors red, yellow, green, blue, and white
 - Cables
 
 ### Wiring:
