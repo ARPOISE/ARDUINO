@@ -1,6 +1,9 @@
 ##     VoiceCommandsWithMax4466Microphone
 
 An ARDUINO sketch for processing six simple voice commands switching LEDs on and off.
+The sketch uses a simple voice recognition implementation running directly on the ARDUINO.
+The voice recognition software initially needs to be trained by the user with spoken command words.
+The training data is then stored on the ARDUINO, so the sketch can be used without repeated training.
 
 - The sketch uses six command words for turning on the five LEDs and for turning them all off.
 - The command words to be used to turn on the LEDs have to be entered in a training session after the sketch is started for the first time.
