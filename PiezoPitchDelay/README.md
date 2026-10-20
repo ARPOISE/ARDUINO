@@ -1,4 +1,4 @@
-##     PiezoPitchDelay
+## ![ARpoise ARDUINO Logo](https://github.com/ARPOISE/ARDUINO/blob/main/ARDUINO-ARpoiseLogo32.png) PiezoPitchDelay
 
 An ARDUINO sketch using two potentiometers driving pitch and delay of a piezo.
 
