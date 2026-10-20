@@ -1,4 +1,4 @@
-##     VoiceCommandsWithMax4466Microphone
+## ![ARpoise ARDUINO Logo](https://github.com/ARPOISE/ARDUINO/blob/main/ARDUINO-ARpoiseLogo32.png) VoiceCommandsWithMax4466Microphone
 
 An ARDUINO sketch for processing six simple voice commands switching LEDs on and off.
 The sketch uses a simple voice recognition implementation running directly on the ARDUINO.
