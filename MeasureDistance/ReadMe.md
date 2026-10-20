@@ -1,4 +1,4 @@
-##     MeasureDistance
+## ![ARpoise ARDUINO Logo](https://github.com/ARPOISE/ARDUINO/blob/main/ARDUINO-ARpoiseLogo32.png) MeasureDistance
 
 An ARDUINO sketch using two HC-SR04 ultrasonic sensors, it uses a low pass filter for the sensor readings, triangulates the object position relative to the right sensor, calculates the angle towards the object relative to the midpoint between the sensors, and uses the servo motor in order to point in the direction of the object sensed.
 
