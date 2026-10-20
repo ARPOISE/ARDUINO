@@ -1,4 +1,4 @@
-## DualPirSensor
+## ![ARpoise ARDUINO Logo](https://github.com/ARPOISE/ARDUINO/blob/main/ARDUINO-ARpoiseLogo32.png) DualPirSensor
 
 An ARDUINO sketch to read the inputs from two HW-416A passive infrared sensors. 
 
