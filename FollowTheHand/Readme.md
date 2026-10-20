@@ -1,4 +1,4 @@
-## ![ARpoise ARDUINO Logo](https://github.com/ARPOISE/ARDUINO/blob/main/ARDUINO-ARpoiseLogo32.png) FollowTheHand
+## [![ARpoise ARDUINO Logo](https://github.com/ARPOISE/ARDUINO/blob/main/ARDUINO-ARpoiseLogo32.png)](https://github.com/ARPOISE/ARDUINO/) FollowTheHand
 
 An ARDUINO sketch using two HC-SR04 and two HY-SRF05 ultrasonic sensors, it triangulates the object position of the object nearest to the sensors, and animates a Unity 3d virtual head to look at that object.
 
