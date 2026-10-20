@@ -1,4 +1,4 @@
-## DualCapacitiveFoil
+## ![ARpoise ARDUINO Logo](https://github.com/ARPOISE/ARDUINO/blob/main/ARDUINO-ARpoiseLogo32.png) DualCapacitiveFoil
 
 An ARDUINO sketch to read the inputs from two capacity foils. 
 
