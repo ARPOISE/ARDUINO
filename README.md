@@ -1,4 +1,4 @@
-# ARpoise - ARDUINO
+# ![ARpoise ARDUINO Logo](https://github.com/ARPOISE/ARDUINO/blob/main/ARDUINO-ARpoiseLogo32.png) ARpoise - ARDUINO
 ARDUINO sketches for enhancing the user experience of ARpoise.
 ### DualCapacitiveFoil
 Reading the inputs from two capacity foils. [DualCapacitiveFoil](https://github.com/ARPOISE/ARDUINO/tree/main/DualCapacitiveFoil).
